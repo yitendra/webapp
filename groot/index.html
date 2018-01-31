@@ -1,0 +1,201 @@
+<html>
+<title>Test Webapp</title>
+<body>
+<div id="container">
+<menu>
+<div  id="hide"><-</div>
+<div class="menu" id="menu">
+<ul type="none">
+<li>Home</li>
+<li>About</li>
+<li>Blog</li>
+<li>Contact</li>
+<li>Donate</li>
+</ul>
+</div>
+</menu>
+<logo>
+<div id="logo">
+<div id="welcome">Welcome to</div>
+<div id="groot_logo" >GROOT<span id="com">.com</span></div>
+<div id="my_name">- By Yitendra</div>
+</div>
+</logo>
+<content>
+<div id="content">
+ lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+  lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+   lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+    lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+</div>
+</content>
+<footer>
+<div id="footer">
+All rights reserved to Groot.com
+</div>
+</footer>
+</div>
+<style>
+*{
+	margin:0px;
+	padding:0px;
+}
+logo,content,footer{
+	display:block;
+	z-index:1;
+	margin:0px;
+	background:black;
+	color:white;
+	padding:5px;
+}
+body{
+width:100%;
+margin:0px auto;
+background:grey;
+text-align:center;
+}
+logo{
+	position:sticky;
+	top:0px;
+	border-bottom:1px solid red;
+}
+.menu{
+	z-index:2;
+	float:left;
+	height:100%;
+	background:red;
+	color:white;
+	margin:0px auto;
+	padding:0px;
+	position:fixed;
+	text-align:justify;
+	padding:10px;
+	padding-top:30px;
+	padding-right:30px;
+	font-family:tahoma;
+	font-size:20px;
+	top:0px;
+	left:0px;
+	text-decoration:underline;
+	display:inline;
+	z-index:3;
+	border-right:1px solid red;
+}
+
+
+#logo{
+	height:100px;
+	top:0px;
+}
+
+#com{
+	font-size:20px;
+}
+#my_name{
+	color:white;
+	text-align:right;
+	margin-right:3px;
+	font-family:arial;
+	font-size:15px;
+	position:relative;
+	top:10px;
+}
+#welcome{
+	font-family:Tahoma;
+	font-size:60px;
+	text-align:left;
+	margin-left:150px;
+	color:cyan;
+}
+#groot_logo{
+	font-family:monospace;
+	font-size:70px;
+	display:inline-block;
+	transition: 0.3s;
+	position:absolute;
+	left:300px;
+	top:40px;
+	opacity:0.6;
+	text-align:left;
+	font-weight:bold;
+	z-index:5;
+}
+#groot_logo:hover{
+	opacity:0.8;
+	font-size:72px;
+}
+#content{
+	font-family:monospace;
+	font-weight:strong;
+	font-size:20px;
+	background:red;
+	width:1%;
+	display:inline-block;
+	text-align:center;
+	
+}
+#footer{
+	border-top:1px solid red;
+}
+#hide{
+	color:white;
+	font-family:Tahoma;
+	font-weight:bold;
+	border:2px solid white;
+	opacity:0.9;
+	margin-top:4px;
+	text-decoration:none;
+	padding:0px;
+	display:inline;
+	position:fixed;
+	top:0px;
+	left:10px;
+	z-index:4;
+}
+li{
+	opacity:0.9;
+	font-family:monospace;
+}
+</style>
+<script>
+var menu=document.getElementById('menu');
+var hide=document.getElementById('hide');
+var time;
+var isOpen=1;
+hide.onclick=function(){
+	hide.style.display="none";
+	if(isOpen){
+		//close menu
+		isOpen=0;	
+		hide.innerHTML="->";
+		time=setInterval(close_menu,2);
+	}else{
+		//open open
+		isOpen=1;	
+		hide.innerHTML="<-";
+		time=setInterval(open_menu,2);
+	}
+}
+var pos=0;
+function close_menu(){
+	if(pos==-150){
+		clearInterval(time);
+		hide.style.display="inline";
+	}else{
+		pos-=5;
+		menu.style.left=pos+'px';
+	}
+}
+var poss=-150;
+function open_menu(){
+	if(pos==0){
+		clearInterval(time);
+		hide.style.display="inline";
+	}else{
+		pos+=5;
+		menu.style.left=pos+'px';
+	}
+}
+</script>
+</body>
+</html>
