@@ -1,4 +1,5 @@
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Test Webapp</title>
 <body>
 <div id="container">
@@ -23,10 +24,11 @@
 </logo>
 <content>
 <div id="content">
- lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-  lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-   lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-    lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+<!--Main Content Here-->
+<div>
+<img id="photo" src="img.jpg" alt="Photo Here" width="200" height="200">
+</div>
+<div id="intro"></div>
 </div>
 </content>
 <footer>
@@ -40,7 +42,7 @@ All rights reserved to Groot.com
 	margin:0px;
 	padding:0px;
 }
-logo,content,footer{
+logo,footer{
 	display:block;
 	z-index:1;
 	margin:0px;
@@ -50,20 +52,28 @@ logo,content,footer{
 }
 body{
 width:100%;
-margin:0px auto;
 background:grey;
 text-align:center;
+background:black;
+}
+#photo{
+	background:radial-gradient(rgba(20,70,1,0.4), rgba(256,0,0,0.3) 60%);
+	display:inline-block;
+	float:left;
+	font-size:25px;
+	color:white;
+	border-radius:50%;
+	margin-left:10px;
 }
 logo{
-	position:sticky;
-	top:0px;
+
 	border-bottom:1px solid red;
 }
 .menu{
 	z-index:2;
 	float:left;
 	height:100%;
-	background:red;
+	background:black;
 	color:white;
 	margin:0px auto;
 	padding:0px;
@@ -127,15 +137,20 @@ logo{
 #content{
 	font-family:monospace;
 	font-weight:strong;
+	color:white;
 	font-size:20px;
-	background:red;
-	width:1%;
-	display:inline-block;
-	text-align:center;
-	
+	max-width:90%;
+	display:block;
+	text-align:leftt;
+	margin-left:120px;	
 }
 #footer{
 	border-top:1px solid red;
+	position:relative;
+}
+#intro{
+	position:relative;
+	
 }
 #hide{
 	color:white;
@@ -196,6 +211,12 @@ function open_menu(){
 		menu.style.left=pos+'px';
 	}
 }
+var intro=document.getElementById("intro");
+function fill(){
+	intro.innerHTML+="Hey There I am Yitendra Kumar. ";
+}
+for(var i=0; i<200; i++)fill();
+
 </script>
 </body>
 </html>
