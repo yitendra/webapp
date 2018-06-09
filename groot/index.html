@@ -28,7 +28,9 @@
 <div>
 <img id="photo" src="img.jpg" alt="Photo Here" width="200" height="200">
 </div>
-<div id="intro"></div>
+<div id="intro">
+	<h1>Work in Progress...</h1>
+</div>
 </div>
 </content>
 <footer>
@@ -150,6 +152,8 @@ logo{
 }
 #intro{
 	position:relative;
+	margin: auto;
+	height: 200px;
 	
 }
 #hide{
@@ -172,50 +176,46 @@ li{
 	font-family:monospace;
 }
 </style>
+
 <script>
-var menu=document.getElementById('menu');
-var hide=document.getElementById('hide');
-var time;
-var isOpen=1;
-hide.onclick=function(){
-	hide.style.display="none";
-	if(isOpen){
-		//close menu
-		isOpen=0;	
-		hide.innerHTML="->";
-		time=setInterval(close_menu,2);
-	}else{
-		//open open
-		isOpen=1;	
-		hide.innerHTML="<-";
-		time=setInterval(open_menu,2);
+	var menu=document.getElementById('menu');
+	var hide=document.getElementById('hide');
+	var time;
+	var isOpen=1;
+	hide.onclick=function(){
+		hide.style.display="none";
+		if(isOpen){
+			//close menu
+			isOpen=0;	
+			hide.innerHTML="->";
+			time=setInterval(close_menu,2);
+		}else{
+			//open open
+			isOpen=1;	
+			hide.innerHTML="<-";
+			time=setInterval(open_menu,2);
+		}
 	}
-}
-var pos=0;
-function close_menu(){
-	if(pos==-150){
-		clearInterval(time);
-		hide.style.display="inline";
-	}else{
-		pos-=5;
-		menu.style.left=pos+'px';
+	var pos=0;
+	function close_menu(){
+		if(pos==-150){
+			clearInterval(time);
+			hide.style.display="inline";
+		}else{
+			pos-=5;
+			menu.style.left=pos+'px';
+		}
 	}
-}
-var poss=-150;
-function open_menu(){
-	if(pos==0){
-		clearInterval(time);
-		hide.style.display="inline";
-	}else{
-		pos+=5;
-		menu.style.left=pos+'px';
+	var poss=-150;
+	function open_menu(){
+		if(pos==0){
+			clearInterval(time);
+			hide.style.display="inline";
+		}else{
+			pos+=5;
+			menu.style.left=pos+'px';
+		}
 	}
-}
-var intro=document.getElementById("intro");
-function fill(){
-	intro.innerHTML+="Hey There I am Yitendra Kumar. ";
-}
-for(var i=0; i<200; i++)fill();
 
 </script>
 </body>
