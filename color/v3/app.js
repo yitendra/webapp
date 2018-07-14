@@ -5,7 +5,7 @@ body=document.getElementById("container");
 var r=225,g=0,b=0;
 
 function bgcolor(){
-	body.style.background = "radial-gradient(rgb("+r+","+g+","+b+"),rgb("+g+","+b+","+r+"))" //"rgb("+r+","+g+","+b+")";
+	body.style.background = "radial-gradient(circle,rgb("+r+","+g+","+b+"),rgb("+g+","+b+","+r+"))" //"rgb("+r+","+g+","+b+")";
 	if(r===225 && g<225){
 		if(b!=0)b--;
 		else g++;
