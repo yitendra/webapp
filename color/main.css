@@ -7,19 +7,20 @@ body{
 #container{
 	height:100%;
 	width:100%;
-	background-color:#c1c1c1;
-	align:center;
-	text-align:center;
-	dispaly:block;
-	margin:0 0;
 }
 
 #header{
-position: absolute;
-  z-index: 15;
-  top: 50%;
-  left: 40%;
-  margin: auto auto;
+	color:white;
+	font-size:20px;
+	font-weight:bold;
+	font-family:monospace;
+}
+
+#middle{
+position: relative;
+  z-index: 1;
+  top: 40%;
+  text-align: center;
   color:white;
   font-size:20px;
   font-weight:bold;

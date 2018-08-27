@@ -4,8 +4,17 @@
 		<link rel="stylesheet" href="main.css" />
 	</head>
 	<body>
-		<div id="container">
-			<div id="header">
+		<div id="container" onmousemove="showCoords(event)">
+			
+			<div id = "header">
+				<button id = "btn1" onclick="changeColor(normal)">Normal</button>
+				<button id = "btn2" onclick="changeColor(linear)">Linear</button>
+				<button id = "btn3" onclick="changeColor(radial)">Radial</button>
+				<button id = "btn4" onclick="changeColor(linearRadial)">OnMouse</button>
+			</div>
+			</div>
+
+			<div id="middle">
 			Let's Change The Color.
 			</div>
 			
