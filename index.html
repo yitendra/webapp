@@ -20,6 +20,25 @@
       padding-right: 5px;
     }
 
+    @keyframes mymove {
+      0%   {top: 0px;}
+      50%  {top: 3px;}
+      100%  {top: 0px}
+    }
+
+    #resumeLink{
+      top:15px;
+      display:inline-block;
+      right:20px;
+      position: absolute;
+    }
+   
+    #upDown{
+      animation: mymove 2s infinite ease;
+      display: inline-block;
+      position: relative;
+    }
+
 </style>
 
 <body class="w3-light-grey">
@@ -47,7 +66,7 @@
           <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>yittuA@gmail.com</p>
           <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>+917004821361</p>
           <hr>
-
+          <a href="resume.pdf">Download My Resume <i class="fas fa-download"></i></a> 
           <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
           <p>FrontEnd</p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
@@ -88,9 +107,9 @@
     <!-- Right Column -->
     <div class="w3-twothird">
     
-      
 
       <div class="w3-container w3-card w3-white">
+          <a href="resume.pdf"><div id="resumeLink"><div id="upDown"><i class="fas fa-download"></i></div> Download My Resume</div></a>
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
         <div class="w3-container">
           <h5 class="w3-opacity"><b>Chandigarh Group of Colleges, Landran</b></h5>
